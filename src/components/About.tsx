@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -178,23 +179,13 @@ export default function About() {
       <div className="max-w-6xl w-full mx-auto flex flex-col items-center text-center">
         {/* Ritz Logo Header */}
         <div ref={logoRef} className="flex flex-col items-center gap-4 mb-12">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-[#E2B659] bg-[#0E1125]">
-              <svg
-                viewBox="0 0 100 100"
-                className="w-7 h-7 fill-[#E2B659] animate-[spin_30s_linear_infinite]"
-              >
-                <path d="M50 0 L65 35 L35 35 Z" />
-                <path d="M100 50 L65 65 L65 35 Z" />
-                <path d="M50 100 L35 65 L65 65 Z" />
-                <path d="M0 50 L35 35 L35 65 Z" />
-              </svg>
-            </div>
-            <div className="flex flex-col items-start font-display text-lg font-black tracking-widest leading-none">
-              <span className="text-[#D4AF37]">RITZ MEDIA</span>
-              <span className="text-[#0E1125]">WORLD</span>
-            </div>
-          </div>
+          <Image
+            src="/images/logo.png"
+            alt="Ritz Media World Logo"
+            width={200}
+            height={40}
+            className="h-8 md:h-10 w-auto object-contain select-none"
+          />
           <p
             ref={title1Ref}
             className="font-sans text-xs md:text-sm font-bold text-[#8E9AA8] tracking-widest uppercase mt-2 max-w-lg leading-relaxed"

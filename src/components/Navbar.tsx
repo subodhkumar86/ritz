@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import Magnetic from "./Magnetic";
 
@@ -111,28 +112,16 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-          {/* Logo with Camera Shutter Icon */}
+          {/* Brand Logo Image */}
           <Magnetic strength={0.15}>
-            <a href="#" className="flex items-center gap-3 select-none transform-gpu group">
-              {/* Shutter Icon */}
-              <div className="relative w-8 h-8 md:w-9 md:h-9 flex items-center justify-center rounded-full border-2 border-accent group-hover:border-white transition-colors duration-300">
-                <svg
-                  viewBox="0 0 100 100"
-                  className="w-5 h-5 md:w-6 md:h-6 fill-accent group-hover:fill-white transition-colors duration-300 animate-[spin_20s_linear_infinite]"
-                >
-                  <path d="M50 0 L65 35 L35 35 Z" />
-                  <path d="M100 50 L65 65 L65 35 Z" />
-                  <path d="M50 100 L35 65 L65 65 Z" />
-                  <path d="M0 50 L35 35 L35 65 Z" />
-                </svg>
-                <span className="absolute font-display font-black text-xs md:text-sm text-white group-hover:text-accent transition-colors duration-300">
-                  R
-                </span>
-              </div>
-              <div className="flex flex-col md:flex-row md:items-center gap-0 md:gap-1.5 font-display text-sm md:text-lg font-black tracking-widest leading-none">
-                <span className="text-accent group-hover:text-white transition-colors duration-300">RITZ MEDIA</span>
-                <span className="text-white">WORLD</span>
-              </div>
+            <a href="#" className="flex items-center select-none transform-gpu group py-2">
+              <Image
+                src="/images/logo.png"
+                alt="Ritz Media World Logo"
+                width={180}
+                height={36}
+                className="h-6 md:h-8 w-auto object-contain brightness-100 group-hover:brightness-105 transition-all duration-300"
+              />
             </a>
           </Magnetic>
 
