@@ -17,12 +17,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "BULLETPROOF. | Global Brand Design & Creative Agency",
-  description: "We are Bulletproof. An independent global brand creative agency. We build future-proof brands that make an impact, combining high-end strategy with premium visual identity.",
-  keywords: "brand agency, creative design, design agency, brand strategy, visual identity, premium web design, product design",
+  title: "Ritz Media World | 360° Digital Marketing & Creative Brand Agency",
+  description: "Ritz Media World is a premium independent creative brand and digital marketing agency. We build impossible-to-ignore brands through metrics-driven strategy and media expansion.",
+  keywords: "Ritz Media World, brand agency, digital marketing, Noida, performance marketing, creative agency, brand strategy, media strategy, visual identity",
   openGraph: {
-    title: "BULLETPROOF. | Global Brand Design & Creative Agency",
-    description: "We are Bulletproof. An independent global brand creative agency. We build future-proof brands that make an impact.",
+    title: "Ritz Media World | 360° Digital Marketing & Creative Brand Agency",
+    description: "Ritz Media World is a premium independent creative brand and digital marketing agency. We build impossible-to-ignore brands.",
     type: "website",
   },
 };
