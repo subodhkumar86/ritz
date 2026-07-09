@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0E1125;
+  --color-foreground: #F8F9FA;
+  
+  --color-bg-dark: #0E1125;
+  --color-bg-light: #F9F9FB;
+  --color-accent: #E2B659;
+  --color-accent-violet: #4F46E5;
+  --color-muted: #8E9AA8;
+  --color-border-dark: rgba(255, 255, 255, 0.08);
+  --color-border-light: rgba(0, 0, 0, 0.06);
+  
+  --font-sans: var(--font-plus-jakarta-sans), sans-serif;
+  --font-display: var(--font-syne), sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E2B659;
+}
+
+/* Lenis Smooth Scroll Configuration */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Global Animations Utilities */
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(248, 249, 250, 0.25);
+  color: transparent;
+  transition: -webkit-text-stroke 0.3s, color 0.3s;
+}
+
+.text-stroke:hover {
+  -webkit-text-stroke: 1px #E2B659;
+  color: #E2B659;
+}
+
+/* Hide cursor on desktop where we use custom cursor */
+@media (min-width: 1024px) {
+  .custom-cursor-active {
+    cursor: none;
+  }
+  .custom-cursor-active a,
+  .custom-cursor-active button,
+  .custom-cursor-active [role="button"] {
+    cursor: none;
+  }
+}
+
