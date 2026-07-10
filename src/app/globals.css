@@ -3,7 +3,7 @@
 @theme {
   --color-background: #0E1125;
   --color-foreground: #F8F9FA;
-  
+
   --color-bg-dark: #0E1125;
   --color-bg-light: #F9F9FB;
   --color-accent: #E2B659;
@@ -11,28 +11,38 @@
   --color-muted: #8E9AA8;
   --color-border-dark: rgba(255, 255, 255, 0.08);
   --color-border-light: rgba(0, 0, 0, 0.06);
-  
-  --font-sans: var(--font-plus-jakarta-sans), sans-serif;
-  --font-display: var(--font-syne), sans-serif;
+
+  --font-sans: "Avenir Next", "Segoe UI", Arial, sans-serif;
+  --font-display: "Avenir Next", "Segoe UI", Arial, sans-serif;
 }
 
-/* Custom Scrollbar */
+:root {
+  --page-dark: #101536;
+  --page-dark-2: #171d46;
+  --page-cream: #f4f1e8;
+  --page-cream-2: #efebe1;
+  --page-gold: #dba845;
+  --page-ink: #23232a;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #000000;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #222;
   border-radius: 4px;
   transition: background 0.3s ease;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #E2B659;
 }
 
-/* Lenis Smooth Scroll Configuration */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -54,7 +64,6 @@ html.lenis body {
   pointer-events: none;
 }
 
-/* Custom Global Animations Utilities */
 .text-stroke {
   -webkit-text-stroke: 1px rgba(248, 249, 250, 0.25);
   color: transparent;
@@ -66,11 +75,11 @@ html.lenis body {
   color: #E2B659;
 }
 
-/* Hide cursor on desktop where we use custom cursor */
 @media (min-width: 1024px) {
   .custom-cursor-active {
     cursor: none;
   }
+
   .custom-cursor-active a,
   .custom-cursor-active button,
   .custom-cursor-active [role="button"] {
@@ -78,3 +87,70 @@ html.lenis body {
   }
 }
 
+body {
+  background:
+    radial-gradient(circle at top, rgba(219, 168, 69, 0.08), transparent 30%),
+    linear-gradient(180deg, #161c47 0%, #11163f 18%, #11163f 100%);
+  color: #f8f9fa;
+}
+
+::selection {
+  background: rgba(219, 168, 69, 0.35);
+  color: #fff;
+}
+
+.section-shell {
+  position: relative;
+  overflow: clip;
+}
+
+.section-shell::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+}
+
+.cream-shell::before {
+  background: linear-gradient(90deg, transparent, rgba(17, 22, 63, 0.08), transparent);
+}
+
+.panel-dark {
+  background: linear-gradient(180deg, rgba(28, 35, 84, 0.9), rgba(18, 24, 65, 0.96));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 80px rgba(5, 7, 22, 0.28);
+}
+
+.panel-cream {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.2));
+  border: 1px solid rgba(35, 35, 42, 0.08);
+  box-shadow: 0 20px 60px rgba(17, 22, 63, 0.06);
+}
+
+.shutter-mark {
+  position: relative;
+}
+
+.shutter-mark::before,
+.shutter-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.shutter-mark::before {
+  background:
+    linear-gradient(62deg, transparent 36%, rgba(141, 146, 182, 0.55) 36%, rgba(141, 146, 182, 0.55) 54%, transparent 54%),
+    linear-gradient(120deg, transparent 38%, rgba(141, 146, 182, 0.55) 38%, rgba(141, 146, 182, 0.55) 56%, transparent 56%),
+    linear-gradient(180deg, transparent 39%, rgba(141, 146, 182, 0.55) 39%, rgba(141, 146, 182, 0.55) 57%, transparent 57%);
+  clip-path: polygon(50% 3%, 78% 16%, 92% 44%, 84% 80%, 56% 98%, 24% 87%, 9% 56%, 17% 21%);
+  opacity: 0.9;
+}
+
+.shutter-mark::after {
+  inset: 22%;
+  border-radius: 999px;
+  border: 8px solid rgba(141, 146, 182, 0.55);
+}

@@ -2,15 +2,15 @@
 
 import Image from "next/image";
 
-export default function Timeline() {
+export default function Recognition() {
   return (
-    <section className="bg-black px-6 py-14 md:px-10 md:py-18">
+    <section className="bg-[#141a46] px-6 py-14 md:px-10 md:py-18">
       <div className="mx-auto max-w-[1440px]">
         <Image
-          src="/images/figma-timeline.png"
-          alt="17 years of brand excellence timeline"
+          src="/images/figma-awards.png"
+          alt="Awards and company recognition"
           width={1440}
-          height={810}
+          height={1024}
           className="h-auto w-full"
         />
       </div>

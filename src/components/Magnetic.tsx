@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 interface MagneticProps {
-  children: React.ReactElement;
+  children: React.ReactNode;
   strength?: number;
 }
 
 export default function Magnetic({ children, strength = 0.35 }: MagneticProps) {
-  const containerRef = useRef<HTMLElement | null>(null);
+  const containerRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -19,12 +19,9 @@ export default function Magnetic({ children, strength = 0.35 }: MagneticProps) {
     const yTo = gsap.quickTo(el, "y", { duration: 0.8, ease: "power3.out" });
 
     const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
       const { left, top, width, height } = el.getBoundingClientRect();
-      // Calculate relative position to the center of the element
-      const x = clientX - (left + width / 2);
-      const y = clientY - (top + height / 2);
-      // Pull element towards cursor scaled by strength
+      const x = e.clientX - (left + width / 2);
+      const y = e.clientY - (top + height / 2);
       xTo(x * strength);
       yTo(y * strength);
     };
@@ -43,16 +40,9 @@ export default function Magnetic({ children, strength = 0.35 }: MagneticProps) {
     };
   }, [strength]);
 
-  return React.cloneElement(children as any, {
-    ref: (node: HTMLElement | null) => {
-      containerRef.current = node;
-      // Also invoke the original ref if it exists
-      const { ref: originalRef } = children as any;
-      if (typeof originalRef === "function") {
-        originalRef(node);
-      } else if (originalRef) {
-        originalRef.current = node;
-      }
-    },
-  });
+  return (
+    <span ref={containerRef} className="inline-flex">
+      {children}
+    </span>
+  );
 }

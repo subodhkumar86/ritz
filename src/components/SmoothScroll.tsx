@@ -40,7 +40,7 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     // Tick function to update Lenis on every animation frame
     let rafId: number;
     const update = (time: number) => {
-      lenis.raf(time * 1000); // lenis raf expects milliseconds
+      lenis.raf(time);
       rafId = requestAnimationFrame(update);
     };
     rafId = requestAnimationFrame(update);

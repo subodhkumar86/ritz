@@ -56,9 +56,6 @@ export default function HorizontalScroll() {
     const mm = gsap.matchMedia();
 
     mm.add("(min-width: 1024px)", () => {
-      const panels = container.querySelectorAll(".scroll-panel");
-      const totalPanels = panels.length;
-      
       // Calculate scroll distance
       const scrollDistance = container.scrollWidth - window.innerWidth;
 
